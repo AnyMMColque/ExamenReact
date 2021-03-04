@@ -31,7 +31,7 @@ class CreateTarea extends React.Component {
         console.log(this.state);
         var req = new Request('post', CREATE_USER, this.state, (response) => {
             if (response.status == 200) {
-                alert('usuario registrado');
+                alert('Tarea registrada');
             }
         });
         req.start();
@@ -50,7 +50,7 @@ class CreateTarea extends React.Component {
                 />
                 <TextCustomInput 
                     iconname="customerservice" 
-                    placeholder="Apellido" 
+                    placeholder="Descripción" 
                     onChangeText={(txt) => {
                         this.setState({
                             lastname: txt,
@@ -59,7 +59,7 @@ class CreateTarea extends React.Component {
                 />
                 <TextCustomInput 
                     iconname="customerservice" 
-                    placeholder="Email" 
+                    placeholder="Fecha" 
                     onChangeText={(txt) => {
                         this.setState({
                             email: txt,
@@ -68,7 +68,7 @@ class CreateTarea extends React.Component {
                 />
                 <TextCustomInput 
                     iconname="customerservice" 
-                    placeholder="Password" 
+                    placeholder="Hora" 
                     secureTextEntry={true}
                     onChangeText={(txt) => {
                         this.setState({
@@ -78,7 +78,7 @@ class CreateTarea extends React.Component {
                 />
                 <TextCustomInput 
                     iconname="customerservice" 
-                    placeholder="Re. Password" 
+                    placeholder="Done" 
                     secureTextEntry={true}
                     onChangeText={(txt) => {
                         this.setState({
