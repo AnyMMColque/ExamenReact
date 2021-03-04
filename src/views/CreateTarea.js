@@ -19,11 +19,10 @@ class CreateTarea extends React.Component {
         super(props);
         this.state = {
             name: '',
-            lastname: '',
-            email: '',
-            password: null,
-            repassword: null,
-            age: 0,
+            description: '',
+            date: '',
+            hour: null,
+            done: null,
         };
     }
     componentDidMount(){}
@@ -53,7 +52,7 @@ class CreateTarea extends React.Component {
                     placeholder="Descripción" 
                     onChangeText={(txt) => {
                         this.setState({
-                            lastname: txt,
+                            description: txt,
                         });
                     }} 
                 />
@@ -62,7 +61,7 @@ class CreateTarea extends React.Component {
                     placeholder="Fecha" 
                     onChangeText={(txt) => {
                         this.setState({
-                            email: txt,
+                            date: txt,
                         });
                     }} 
                 />
@@ -72,7 +71,7 @@ class CreateTarea extends React.Component {
                     secureTextEntry={true}
                     onChangeText={(txt) => {
                         this.setState({
-                            password: txt,
+                            hour: txt,
                         });
                     }} 
                 />
@@ -82,17 +81,7 @@ class CreateTarea extends React.Component {
                     secureTextEntry={true}
                     onChangeText={(txt) => {
                         this.setState({
-                            repassword: txt,
-                        });
-                    }} 
-                />
-                <TextCustomInput 
-                    iconname="customerservice" 
-                    keyboardType="numeric" 
-                    placeholder="Edad" 
-                    onChangeText={(txt) => {
-                        this.setState({
-                            age: txt,
+                            done: txt,
                         });
                     }} 
                 />
