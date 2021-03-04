@@ -30,7 +30,7 @@ class CreateTarea extends React.Component {
         console.log(this.state);
         var req = new Request('post', CREATE_USER, this.state, (response) => {
             if (response.status == 200) {
-                alert('Tarea registrada');
+                alert('Tarea agregada');
             }
         });
         req.start();
@@ -86,8 +86,29 @@ class CreateTarea extends React.Component {
                     }} 
                 />
                 <CustomButtons 
-                    title="Crear Usuario" 
-                    iconname="meh" 
+                    title="Agregar Tarea" 
+                    iconname="documents" 
+                    onPress={() => {
+                        this.registerData();
+                    }} 
+                />
+                <CustomButtons 
+                    title="Borrar Tarea" 
+                    iconname="trash" 
+                    onPress={() => {
+                        this.registerData();
+                    }} 
+                />
+                <CustomButtons 
+                    title="Actualizar Tarea" 
+                    iconname="back-in-time" 
+                    onPress={() => {
+                        this.registerData();
+                    }} 
+                />
+                <CustomButtons 
+                    title="Actualizar Done" 
+                    iconname="refresh" 
                     onPress={() => {
                         this.registerData();
                     }} 
