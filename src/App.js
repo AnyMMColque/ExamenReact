@@ -5,26 +5,25 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import VectorIcons from 'react-native-vector-icons/AntDesign';
 import Color from './layout/colors.js';
-import CreateUser from './views/CreateUser.js';
-import ListUser from './views/ListUser.js';
+import CreateTarea from './views/CreateTarea.js';
+import ListTareas from './views/ListTareas.js';
 const Tab = createBottomTabNavigator();
 
 class App extends React.Component {
   constructor(props){
     super(props);
   }
-  listUser() {
-    return <ListUser />;
+  ListTareas() {
+    return <ListTareas />;
   }
-  createUser() {
-    return <CreateUser />;
+  createTarea() {
+    return <CreateTarea />;
   }
   render(){
     return (
@@ -34,11 +33,11 @@ class App extends React.Component {
             tabBarIcon: ({focused, color,size}) =>{
               let iconName;
               switch (route.name){
-                case 'Lista de Usuarios': {
+                case 'Lista de Tareas': {
                   if (focused){
                     return (
                       <VectorIcons 
-                        name="bars" 
+                        name="profile" 
                         size={23} 
                         color={Color.option1.thirthcolor} 
                       />
@@ -47,18 +46,18 @@ class App extends React.Component {
                   else {
                     return (
                       <VectorIcons 
-                        name="bars" 
+                        name="profile" 
                         size={23} 
                         color={Color.option1.secondcolor}  
                       />
                     );
                   }
                 }
-                case 'Crear Usuarios': {
+                case 'Crear Tareas': {
                   if (focused){
                     return (
                       <VectorIcons 
-                        name="addusergroup" 
+                        name="form" 
                         size={23} 
                         color={Color[Color.key].thirthcolor} 
                       />
@@ -67,7 +66,7 @@ class App extends React.Component {
                   else {
                     return (
                       <VectorIcons 
-                      name="addusergroup" 
+                      name="form" 
                       size={23} 
                       color={Color[Color.key].secondcolor} 
                       />
@@ -77,11 +76,12 @@ class App extends React.Component {
               } 
             }
           })}>
-          <Tab.Screen name="Lista de Usuarios" component={this.listUser} />
-          <Tab.Screen name="Crear Usuarios" component={this.createUser} />
+          <Tab.Screen name="Lista de Tareas" component={this.ListTareas} />
+          <Tab.Screen name="Crear Tareas" component={this.createTarea} />
         </Tab.Navigator>
       </NavigationContainer>
     );
   }
 }
 export default App;
+
