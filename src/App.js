@@ -33,7 +33,7 @@ class App extends React.Component {
             tabBarIcon: ({focused, color,size}) =>{
               let iconName;
               switch (route.name){
-                case 'Lista de Tareas': {
+                case 'Mostrar Tareas': {
                   if (focused){
                     return (
                       <VectorIcons 
@@ -53,7 +53,7 @@ class App extends React.Component {
                     );
                   }
                 }
-                case 'Crear Tareas': {
+                case 'Agregar Tareas': {
                   if (focused){
                     return (
                       <VectorIcons 
@@ -76,8 +76,8 @@ class App extends React.Component {
               } 
             }
           })}>
-          <Tab.Screen name="Lista de Tareas" component={this.ListTareas} />
-          <Tab.Screen name="Crear Tareas" component={this.createTarea} />
+          <Tab.Screen name="Mostrar Tareas" component={this.ListTareas} />
+          <Tab.Screen name="Agregar Tareas" component={this.createTarea} />
         </Tab.Navigator>
       </NavigationContainer>
     );

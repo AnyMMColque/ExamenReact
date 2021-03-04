@@ -21,8 +21,8 @@ class CreateTarea extends React.Component {
             name: '',
             description: '',
             date: '',
-            hour: null,
-            done: null,
+            hour: '',
+            done: '',
         };
     }
     componentDidMount(){}
