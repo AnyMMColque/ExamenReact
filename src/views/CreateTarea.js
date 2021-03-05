@@ -13,7 +13,7 @@ import TextCustomInput from '../components/TextCustomInput.js';
 import Color from '../layout/colors.js';
 import CustomButtons from '../components/CustomButtons.js';
 import Request from '../server/Request.js';
-import {CREATE_USER} from '../server/EndPoints.js';
+import {CREATE_TAREA, UPDATE_TAREA, UPDATE_DONE, DELETE_TAREA} from '../server/EndPoints.js';
 class CreateTarea extends React.Component {
     constructor(props) {
         super(props);
@@ -28,9 +28,27 @@ class CreateTarea extends React.Component {
     componentDidMount(){}
     registerData() {
         console.log(this.state);
-        var req = new Request('post', CREATE_USER, this.state, (response) => {
+        var req = new Request('post', CREATE_TAREA, this.state, (response) => {
             if (response.status == 200) {
                 alert('Tarea agregada');
+            }
+        });
+        req.start();
+        var req = new Request('put', UPDATE_TAREA, this.state, (response) => {
+            if (response.status == 200) {
+                alert('Tarea actualizada');
+            }
+        });
+        req.start();
+        var req = new Request('put', UPDATE_DONE, this.state, (response) => {
+            if (response.status == 200) {
+                alert('Done actualizada');
+            }
+        });
+        req.start();
+        var req = new Request('delete', DELETE_TAREA, this.state, (response) => {
+            if (response.status == 200) {
+                alert('Tarea eliminada');
             }
         });
         req.start();

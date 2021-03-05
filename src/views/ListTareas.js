@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
 import Request from '../server/Request.js';
-import {SHOW_USER} from '../server/EndPoints.js';
+import {SHOW_TAREA} from '../server/EndPoints.js';
 import Item from '../components/Item.js';
 class ListTareas extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class ListTareas extends React.Component {
         };
     }
     componentDidMount() {
-        var request = new Request('get', SHOW_USER, {}, (response) => {
+        var request = new Request('get', SHOW_TAREA, {}, (response) => {
             if (response.status ==200){
                 this.setState({
                     list: response.data,

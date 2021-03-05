@@ -11,7 +11,7 @@ class CustomButtons extends React.Component {
         const {title, iconname} = this.props;
         var icon = iconname;
         if (icon == null) {
-            icon = 'check';
+            icon = 'circle-with-cross';
         }
         return (
             <TouchableOpacity 
